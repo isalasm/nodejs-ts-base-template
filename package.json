@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-ts-base-template",
+  "version": "1.0.0",
+  "description": "Base project structure to run node JS with typescript",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+		"test": "jest",
+		"build": "npx tsup",
+		"biome:force": "npx @biomejs/biome check --apply-unsafe ./src/*"
+	},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "lefthook": "^1.6.11",
+    "ts-jest": "^29.1.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "tsup": {
+    "entry": ["src/**/*.ts", "!src/**/*.test.ts"]
+  }
+}
